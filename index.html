@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -179,25 +180,23 @@
         }
 
         .stat-images {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap; /* penting agar bisa turun ke baris baru di HP */
-}
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+            flex-wrap: nowrap; /* Tetap sejajar, tidak turun ke bawah */
+        }
 
-.stat-images img {
-    width: 45%; /* 2 gambar di satu baris */
-    height: auto;
-    border-radius: 10px;
-}
-
-/* Responsif untuk HP */
-@media(max-width:600px){
-    .stat-images img {
-        width: 100%; /* gambar penuh baris di HP */
-    }
-}
+        .stat-images img {
+            width: 48%;
+            height: auto;
+            border-radius: 15px;
+            object-fit: contain;
+            display: block;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
 
         .stat-label {
             margin-top: 20px;
@@ -444,14 +443,12 @@
             }
 
             .stat-images {
-                flex-direction: column;
-                gap: 15px;
+                gap: 10px; /* Kurangi gap di mobile */
             }
 
             .stat-images img {
-                width: 90%;
-                max-width: 100%;
-                min-width: unset;
+                width: 48%; /* Tetap 48% agar sejajar */
+                border-radius: 10px;
             }
 
             .job-prospects {
@@ -1083,6 +1080,7 @@
     </script>
 </body>
 </html>
+
 
 
 
