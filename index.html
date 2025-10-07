@@ -14,6 +14,7 @@
 
         body {
             font-family: 'Inter', 'Segoe UI', sans-serif;
+            background: url(img/q2wa.jpg);
             color: #fff;
             line-height: 1.6;
             position: relative;
@@ -32,18 +33,20 @@
 
         .container {
   display: flex;
-  flex-wrap: wrap;              /* biar turun ke bawah kalau nggak muat */
-  justify-content: space-evenly;/* biar rata kanan kiri */
+  flex-wrap: wrap;
+  justify-content: center;     /* posisi tengah */
   align-items: flex-start;
-  gap: 25px;                    /* jarak antar card */
-  max-width: 95%;               /* biar nggak terlalu sempit di tengah */
+  gap: 25px;                   /* jarak antar card */
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 30px 10px;           /* kurangi padding biar sisi terisi */
+  padding: 40px 20px;
 }
 
+/* Kartu */
 .card {
-  flex: 1 1 280px;              /* tiap card minimal 280px */
-  max-width: 320px;             /* sedikit diperkecil biar bisa lebih banyak di 1 baris */
+  flex: 0 1 45%;               /* dua kolom tetap */
+  max-width: 45%;
   background: #101b40;
   color: white;
   padding: 25px;
@@ -66,16 +69,10 @@
   line-height: 1.5;
 }
 
-/* 📱 Responsif di HP */
-@media (max-width: 768px) {
-  .container {
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-  }
-
+/* --- Responsif --- */
+@media (max-width: 600px) {
   .card {
-    flex: 1 1 100%;
+    flex: 0 1 90%;   /* kalau HP kecil banget, satu kolom tengah */
     max-width: 90%;
   }
 }
