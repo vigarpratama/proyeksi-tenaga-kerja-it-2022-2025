@@ -42,17 +42,10 @@
 }
 
 .card {
-  flex: 0 1 45%;       /* 2 kolom di HP */
-  max-width: 45%;
-  background: #101b40;
-  color: white;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  flex: 0 1 45%;      /* 2 kolom */
+  max-width: 45%;      /* supaya tetap proporsional */
+  min-width: 200px;    /* jangan terlalu kecil */
 }
-
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 25px rgba(0,0,0,0.3);
