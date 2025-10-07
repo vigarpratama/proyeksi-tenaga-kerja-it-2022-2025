@@ -33,23 +33,23 @@
 
         .container {
   display: flex;
-  flex-wrap: wrap;              
-  justify-content: space-evenly; /* rata kanan kiri */
-  align-items: flex-start;
-  gap: 25px;                    
-  max-width: 95%;               
+  flex-wrap: wrap;
+  justify-content: space-evenly; /* kanan kiri tetap terisi */
+  gap: 20px;
+  max-width: 95%;
   margin: 0 auto;
-  padding: 30px 10px;           
+  padding: 20px 10px;
 }
 
 .card {
-  flex: 1 1 280px;              
-  max-width: 320px;             
+  flex: 0 1 45%;       /* 2 kolom di HP */
+  max-width: 45%;
   background: #101b40;
   color: white;
   padding: 25px;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -58,33 +58,10 @@
   box-shadow: 0 12px 25px rgba(0,0,0,0.3);
 }
 
-.card h3 {
-  margin-bottom: 10px;
-  color: #ffcc00;
-}
-
-.card p {
-  line-height: 1.5;
-}
-
-/* 📱 Responsif di HP */
-@media (max-width: 768px) {
-  .container {
-    justify-content: space-evenly;  /* tetap kanan kiri */
-    gap: 20px;
-    padding: 20px;
-  }
-
-  .card {
-    flex: 1 1 45%;      /* 2 kolom di HP, tidak full */
-    max-width: 45%;
-  }
-}
-
 /* HP super kecil */
 @media (max-width: 480px) {
   .card {
-    flex: 1 1 85%;      /* 1 kolom tengah tapi masih ada margin */
+    flex: 0 1 85%;     /* 1 kolom tengah */
     max-width: 85%;
   }
 }
