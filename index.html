@@ -33,20 +33,18 @@
 
         .container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;     /* posisi tengah */
+  flex-wrap: wrap;              
+  justify-content: space-evenly; /* rata kanan kiri */
   align-items: flex-start;
-  gap: 25px;                   /* jarak antar card */
-  width: 100%;
-  max-width: 1200px;
+  gap: 25px;                    
+  max-width: 95%;               
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 30px 10px;           
 }
 
-/* Kartu */
 .card {
-  flex: 0 1 45%;               /* dua kolom tetap */
-  max-width: 45%;
+  flex: 1 1 280px;              
+  max-width: 320px;             
   background: #101b40;
   color: white;
   padding: 25px;
@@ -69,11 +67,25 @@
   line-height: 1.5;
 }
 
-/* --- Responsif --- */
-@media (max-width: 600px) {
+/* 📱 Responsif di HP */
+@media (max-width: 768px) {
+  .container {
+    justify-content: space-evenly;  /* tetap kanan kiri */
+    gap: 20px;
+    padding: 20px;
+  }
+
   .card {
-    flex: 0 1 90%;   /* kalau HP kecil banget, satu kolom tengah */
-    max-width: 90%;
+    flex: 1 1 45%;      /* 2 kolom di HP, tidak full */
+    max-width: 45%;
+  }
+}
+
+/* HP super kecil */
+@media (max-width: 480px) {
+  .card {
+    flex: 1 1 85%;      /* 1 kolom tengah tapi masih ada margin */
+    max-width: 85%;
   }
 }
 
