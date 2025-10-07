@@ -31,10 +31,55 @@
         }
 
         .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 50px;
-        }
+  display: flex;
+  flex-wrap: wrap;              /* biar turun ke bawah kalau nggak muat */
+  justify-content: space-evenly;/* biar rata kanan kiri */
+  align-items: flex-start;
+  gap: 25px;                    /* jarak antar card */
+  max-width: 95%;               /* biar nggak terlalu sempit di tengah */
+  margin: 0 auto;
+  padding: 30px 10px;           /* kurangi padding biar sisi terisi */
+}
+
+.card {
+  flex: 1 1 280px;              /* tiap card minimal 280px */
+  max-width: 320px;             /* sedikit diperkecil biar bisa lebih banyak di 1 baris */
+  background: #101b40;
+  color: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: #ffcc00;
+}
+
+.card p {
+  line-height: 1.5;
+}
+
+/* 📱 Responsif di HP */
+@media (max-width: 768px) {
+  .container {
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .card {
+    flex: 1 1 100%;
+    max-width: 90%;
+  }
+}
+
 
         header {
             background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(99,102,241,0.15)),
@@ -925,5 +970,4 @@ select option {
         });
     </script>
 </body>
-</html>s
-
+</html>
