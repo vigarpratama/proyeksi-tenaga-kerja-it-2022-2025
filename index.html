@@ -179,25 +179,25 @@
         }
 
         .stat-images {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            width: 100%;
-            flex-wrap: wrap;
-        }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap; /* penting agar bisa turun ke baris baru di HP */
+}
 
-        .stat-images img {
-            width: 45%;
-            min-width: 200px;
-            max-width: 300px;
-            height: auto;
-            border-radius: 15px;
-            object-fit: contain;
-            display: block;
-            background: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        }
+.stat-images img {
+    width: 45%; /* 2 gambar di satu baris */
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Responsif untuk HP */
+@media(max-width:600px){
+    .stat-images img {
+        width: 100%; /* gambar penuh baris di HP */
+    }
+}
 
         .stat-label {
             margin-top: 20px;
@@ -1083,6 +1083,7 @@
     </script>
 </body>
 </html>
+
 
 
 
