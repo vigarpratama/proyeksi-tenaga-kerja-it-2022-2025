@@ -70,40 +70,67 @@
         }
 
         header {
-            background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(99,102,241,0.15)),
-              url(img/Poster\ Cyber\ Bullying\ Ilustratif\ Ungu\ dan\ Biru.jpg);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            backdrop-filter: blur(20px);
-            padding: 60px 40px;
-            text-align: center;
-            border-radius: 25px;
-            margin-bottom: 40px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+    position: relative;
+    background: 
+        linear-gradient(135deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), /* overlay gelap */
+        linear-gradient(135deg, rgba(59,130,246,0.15), rgba(99,102,241,0.15)), 
+        url("img/Poster Cyber Bullying Ilustratif Ungu dan Biru.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    backdrop-filter: blur(20px);
+    padding: 60px 40px;
+    text-align: center;
+    border-radius: 25px;
+    margin-bottom: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff; /* agar teks terlihat jelas */
+}
+
 
         h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(1.8em, 5vw, 3.5em);
-            margin-bottom: 15px;
-            background: linear-gradient(135deg, #ffff83, rgb(76, 74, 135));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 800;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
+    font-family: 'Permanent Marker', cursive; /* font graffiti */
+    font-size: clamp(2em, 6vw, 4em);
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #fff200, #ff55ff); /* gradient cerah */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 
-        .subtitle {
-            font-family: 'Poppins', sans-serif;
-            font-size: clamp(0.9em, 2.5vw, 1.3em);
-            color: #cbd5e1;
-            font-style: italic;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-        }
+    /* Shadow & Outline */
+    text-shadow: 
+        3px 3px 0px #ffffff,    /* solid outline */
+        -2px -2px 0px #60a5fa,
+        2px -2px 0px #60a5fa,
+        -2px 2px 0px #60a5fa,
+
+        /* Lampu / glow tipis */
+        0 0 10px #ffffff,        /* glow kuning lembut */
+        0 0 10px #ff55ff;       /* glow pink lembut */
+}
+
+       .subtitle {
+    font-family: 'Permanent Marker', cursive; /* font graffiti */
+    font-size: clamp(1.1em, 3vw, 1.6em);
+    color: #ffffff; /* warna utama */
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    margin-top: 15px;
+    text-align: center;
+
+    /* Shadow lampu langsung di teks (lebih besar dan terlihat) */
+    text-shadow: 
+        0 0 0px rgba(255, 224, 224, 0.8),
+        0 0 8px rgba(224,231,255,0.6),
+        0 0 12px rgba(224,231,255,0.4);
+}
+
+
+
+
 
         .section {
             background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(51, 65, 85, 0.7) 100%);
@@ -128,16 +155,23 @@
         }
 
         h2 {
-            color: #60a5fa;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #60a5fa;
-            font-size: clamp(1.5em, 3.5vw, 2.2em);
-            font-weight: 700;
-            font-family: 'Poppins', sans-serif;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
+    color: #60a5fa; /* warna utama tetap */
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #60a5fa;
+    font-size: clamp(1.5em, 3.5vw, 2.2em);
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    /* Shadow lampu / neon */
+    text-shadow: 
+        0 0 0px rgba(96,165,250,0.7),
+        0 0 8px rgba(96,165,250,0.5),
+        0 0 12px rgba(96,165,250,0.3);
+}
+
 
         h3 {
             color: #a78bfa;
@@ -653,7 +687,19 @@
                         <strong>Network Operation Backbone:</strong> Pertumbuhan 111,1% (497.254 kebutuhan). Sangat dibutuhkan untuk infrastruktur 5G dan fiber optic backbone.
                     </div>
                     <div class="prospect-item">
-                        <strong>Network Engineer:</strong> Stabil dengan pertumbuhan 33,3% (69.790 kebutuhan). Posisi fundamental dengan prospek jangka panjang di enterprise.
+                        <strong>Network Engineer:</strong> Pertumbuhan 33,3% (69.790 kebutuhan). Posisi fundamental dengan prospek jangka panjang di enterprise.
+                    </div>
+                    <div class="prospect-item">
+                        <strong>Network Assurance Specialist:</strong> Stabil 0,0% (30.533 kebutuhan). Penting untuk monitoring dan kualitas jaringan.
+                    </div>
+                     <div class="prospect-item">
+                        <strong>Voice Communications Specialist:</strong> Pertumbuhan 16,7% (30.533 kebutuhan). Fokus pada komunikasi suara dan layanan telekomunikasi.
+                    </div>
+                    <div class="prospect-item">
+                        <strong>Telecommunication Technician/Engineer:</strong> Stabil -0,0% (24.426 kebutuhan). Posisi teknis operasional di jaringan telekomunikasi.
+                    </div>
+                    <div class="prospect-item">
+                        <strong>Network Designer:</strong> Stabil 0,0% (4.362 kebutuhan). Bertanggung jawab mendesain arsitektur jaringan.
                     </div>
                 </div>
             </div>
@@ -671,7 +717,7 @@
                         <strong>Software Architect:</strong> Pertumbuhan 29,0% (42.746 kebutuhan). Posisi senior dengan kompensasi tinggi dan tanggung jawab strategis.
                     </div>
                     <div class="prospect-item">
-                        <strong>Mobile App Developer:</strong> Pertumbuhan 100,1% (1.745 kebutuhan). Tingginya penetrasi smartphone mendorong demand tinggi.
+                        <strong>Mobile Application Developer:</strong> Pertumbuhan 100,1% (1.745 kebutuhan). Tingginya penetrasi smartphone mendorong demand tinggi.
                     </div>
                 </div>
             </div>
@@ -751,6 +797,9 @@
                     <div class="prospect-item">
                         <strong>System Analyst:</strong> Pertumbuhan 100,0% (6.979 kebutuhan). Bridge antara bisnis dan teknologi.
                     </div>
+                    <div class="prospect-item">
+                        <strong>Database Researcher:</strong> Stabil 0,0% (1.745 kebutuhan). Fokus pada riset dan inovasi database.
+                    </div>
                 </div>
             </div>
 
@@ -769,6 +818,9 @@
                     <div class="prospect-item">
                         <strong>Game Developer:</strong> Stabil di 1.745. Niche market dengan pertumbuhan industri gaming Indonesia yang pesat.
                     </div>
+                    <div class="prospect-item">
+                        <strong>SEO-SEM Specialist:</strong> Stabil 0,0% (6.107 kebutuhan). Fokus pada digital marketing dan optimasi website.
+                    </div>
                 </div>
             </div>
 
@@ -783,6 +835,9 @@
                     </div>
                     <div class="prospect-item">
                         <strong>Quality Assurance Specialist:</strong> Stabil di 2.617. Penting untuk software quality dan testing automation.
+                    </div>
+                     <div class="prospect-item">
+                        <strong>Remote Site Engineer:</strong> Stabil 0,0% (1.745 kebutuhan). Bertugas di lokasi proyek jarak jauh.
                     </div>
                 </div>
             </div>
@@ -1084,7 +1139,6 @@
     </script>
 </body>
 </html>
-
 
 
 
