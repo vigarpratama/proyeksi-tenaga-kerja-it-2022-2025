@@ -99,39 +99,35 @@
             line-height: 1.2;
             
             /* Gradient text - WARNA SAMA */
-            background: linear-gradient(135deg, #ffffff, #ffffff);
+            background: linear-gradient(135deg, rgb(255, 255, 255));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             
             /* Drop shadow untuk outline */
-            filter: drop-shadow(2px 2px 0px #60a5fa) 
-                    drop-shadow(-3px -3px 0px #60a5fa)
-                    drop-shadow(2px -2px 0px #60a5fa)
-                    drop-shadow(-2px 2px 0px #60a5fa)
+            filter: 
+                    
                     drop-shadow(0 0 10px rgba(255, 255, 255, 0.6))
-                    drop-shadow(0 0 10px rgba(255, 85, 255, 0.6));
+                   
         }
 
        .subtitle {
-            font-family: 'Poppins', sans-serif;
-            /* Gunakan rem untuk konsistensi, range lebih proporsional */
-            font-size: clamp(0.9rem, 4vw, 1.4rem);
-            color: #ffffff;
-            font-weight: 600;
-            /* Letter spacing proporsional dengan ukuran font */
-            letter-spacing: clamp(0.5px, 0.05em, 1px);
-            margin-top: 15px;
-            text-align: center;
-            line-height: 1.4;
-            
-            /* Glow effect yang terlihat */
-            text-shadow: 
-                0 0 5px rgba(255, 224, 224, 0.8),
-                0 0 10px rgba(224, 231, 255, 0.6),
-                0 0 15px rgba(224, 231, 255, 0.4),
-                0 0 20px rgba(224, 231, 255, 0.2);
-        }
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(0.8rem, 2.5vw, 1.1rem); /* lebih kecil & proporsional */
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 1.4;
+
+    /* Glow lembut tapi tetap terlihat */
+    text-shadow: 
+        0 0 3px rgba(255, 255, 255, 0.8),
+        0 0 6px rgba(224, 231, 255, 0.6),
+        0 0 10px rgba(224, 231, 255, 0.4);
+}
+
 
 
 
