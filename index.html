@@ -171,7 +171,7 @@
             transition: all 0.3s ease;
             overflow: hidden;
             width: 100%;
-            max-width: 650px;
+            max-width: 900px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -183,19 +183,20 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 15px;
+            gap: 20px;
             width: 100%;
-            flex-wrap: nowrap; /* Tetap sejajar, tidak turun ke bawah */
+            flex-wrap: nowrap;
         }
 
         .stat-images img {
             width: 48%;
+            max-width: 450px;
             height: auto;
             border-radius: 15px;
             object-fit: contain;
             display: block;
             background: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
         }
 
         .stat-label {
@@ -443,12 +444,18 @@
             }
 
             .stat-images {
-                gap: 10px; /* Kurangi gap di mobile */
+                gap: 10px;
             }
 
             .stat-images img {
-                width: 48%; /* Tetap 48% agar sejajar */
+                width: 48%;
+                max-width: none;
                 border-radius: 10px;
+            }
+
+            .stat-card {
+                max-width: 100%;
+                padding: 15px;
             }
 
             .job-prospects {
@@ -1080,6 +1087,7 @@
     </script>
 </body>
 </html>
+
 
 
 
