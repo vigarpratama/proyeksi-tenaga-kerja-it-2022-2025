@@ -89,44 +89,49 @@
 }
 
 
-        h1 {
-    font-family: 'Permanent Marker', cursive; /* font graffiti */
-    font-size: clamp(2em, 6vw, 4em);
-    margin-bottom: 20px;
-    background: linear-gradient(135deg, #fff200, #ff55ff); /* gradient cerah */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 900;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-
-    /* Shadow & Outline */
-    text-shadow: 
-        3px 3px 0px #ffffff,    /* solid outline */
-        -2px -2px 0px #60a5fa,
-        2px -2px 0px #60a5fa,
-        -2px 2px 0px #60a5fa,
-
-        /* Lampu / glow tipis */
-        0 0 10px #ffffff,        /* glow kuning lembut */
-        0 0 10px #ff55ff;       /* glow pink lembut */
-}
+        h1{
+            font-family: 'Permanent Marker', cursive;
+            font-size: clamp(1.5rem, 8vw, 4rem);
+            margin-bottom: 40px;
+            font-weight: 900;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            line-height: 1.2;
+            
+            /* Gradient text - WARNA SAMA */
+            background: linear-gradient(135deg, #ffffff, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            
+            /* Drop shadow untuk outline */
+            filter: drop-shadow(2px 2px 0px #60a5fa) 
+                    drop-shadow(-3px -3px 0px #60a5fa)
+                    drop-shadow(2px -2px 0px #60a5fa)
+                    drop-shadow(-2px 2px 0px #60a5fa)
+                    drop-shadow(0 0 10px rgba(255, 255, 255, 0.6))
+                    drop-shadow(0 0 10px rgba(255, 85, 255, 0.6));
+        }
 
        .subtitle {
-    font-family: 'Permanent Marker', cursive; /* font graffiti */
-    font-size: clamp(1.1em, 3vw, 1.6em);
-    color: #ffffff; /* warna utama */
-    font-weight: 600;
-    letter-spacing: 0.8px;
-    margin-top: 15px;
-    text-align: center;
-
-    /* Shadow lampu langsung di teks (lebih besar dan terlihat) */
-    text-shadow: 
-        0 0 0px rgba(255, 224, 224, 0.8),
-        0 0 8px rgba(224,231,255,0.6),
-        0 0 12px rgba(224,231,255,0.4);
-}
+            font-family: 'Permanent Marker', cursive;
+            /* Gunakan rem untuk konsistensi, range lebih proporsional */
+            font-size: clamp(0.9rem, 4vw, 1.4rem);
+            color: #ffffff;
+            font-weight: 600;
+            /* Letter spacing proporsional dengan ukuran font */
+            letter-spacing: clamp(0.5px, 0.05em, 1px);
+            margin-top: 15px;
+            text-align: center;
+            line-height: 1.4;
+            
+            /* Glow effect yang terlihat */
+            text-shadow: 
+                0 0 5px rgba(255, 224, 224, 0.8),
+                0 0 10px rgba(224, 231, 255, 0.6),
+                0 0 15px rgba(224, 231, 255, 0.4),
+                0 0 20px rgba(224, 231, 255, 0.2);
+        }
 
 
 
