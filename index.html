@@ -216,6 +216,61 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+.small-section .photo-item img.small {
+  max-width: 160px;    /* batas maksimal lebarnya */
+  max-height: 160px;   /* batas maksimal tingginya */
+  width: auto;          /* biar menyesuaikan ukuran asli foto */
+  height: auto;         /* biar proporsional */
+  border-radius: 12px;
+  object-fit: contain;  /* biar tidak terpotong */
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.small-section .photo-item img.small:hover {
+  transform: scale(1.05);
+}
+
+
+/* biar kontainer-nya kecil juga */
+.small-section .small-card {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 15px 25px;
+}
+
+/* biar grid-nya nggak penuh lebar body */
+.small-section .stats-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+
+/* foto di tengah */
+.small-section .photo-item img.small {
+  display: block;
+  margin: 0 auto;
+}
+
+/* teks penerbit di tengah juga */
+.small-section .publisher {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: #ffffff;
+  font-weight: 500;
+  text-align: center;
+}
+
+
+
+
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -791,6 +846,26 @@
                 <p><strong>Outlook Industri 2025:</strong> Dengan total kebutuhan hampir 2 juta profesional TIK, Indonesia menghadapi talent shortage yang serius. Diperlukan peningkatan kapasitas pendidikan vokasi, bootcamp intensif, dan corporate reskilling program untuk memenuhi demand. Peluang career switching sangat terbuka dengan average time-to-hire mencapai 3-6 bulan untuk posisi strategis.</p>
             </div>
         </div>
+        
+        <!-- Bagian foto versi kecil -->
+<section class="small-section">
+  <div class="stats-grid">
+    <div class="small-card">
+      <div class="stat-images">
+        <div class="photo-item">
+          <img src="img/fotosatu.jpg" alt="Poster Vigar" class="small">
+          <p class="publisher">Penulis : Muhammad Vigar Septianta Pratama</p>
+        </div>
+        <div class="photo-item">
+          <img src="img/fotodua.jpg" alt="Poster Nadya" class="small">
+          <p class="publisher">Dosen Pengampu : Nadya Husenti S. Pd., M. Pd.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
         <footer>
             <p><strong>Sumber Data:</strong> Kementerian Ketenagakerjaan Republik Indonesia</p>
@@ -1048,7 +1123,6 @@
     </script>
 </body>
 </html>
-
 
 
 
