@@ -190,7 +190,7 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 20px;
-            margin: 20px 0;
+            margin: 5px 0;
             justify-items: center;
         }
 
@@ -234,7 +234,7 @@
         }
 
         .stat-label {
-            margin-top: 20px;
+            margin-top: 0px;
             font-size: clamp(0.95rem, 2vw, 1.1rem);
             font-weight: 600;
             color: white;
@@ -292,11 +292,33 @@
             font-size: clamp(0.8em, 1.5vw, 1em);
         }
 
-        th, td {
-            padding: clamp(10px, 2vw, 18px);
-            text-align: left;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
+        /* 🎯 Semua sel tabel */
+th, td {
+  padding: clamp(10px, 2vw, 18px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 🎯 Header tabel di tengah */
+th {
+  text-align: center;
+}
+
+/* 🎯 Isi tabel default kiri */
+td {
+  text-align: left;
+}
+
+/* 🎯 Kolom pertama ("No") center */
+th:first-child,
+td:first-child {
+  text-align: center;
+}
+
+/* 🎯 Kolom ke-3 sampai ke-7 center */
+th:nth-child(n+3):nth-child(-n+7),
+td:nth-child(n+3):nth-child(-n+7) {
+  text-align: center;
+}
 
         th {
             background: linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(99, 102, 241, 0.3) 100%);
@@ -1141,6 +1163,7 @@
     </script>
 </body>
 </html>
+
 
 
 
