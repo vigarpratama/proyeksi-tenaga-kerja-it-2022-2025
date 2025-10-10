@@ -647,27 +647,27 @@ function scrollToSection(id) {
     if (section) {
         // scroll ke section
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        // sembunyikan nav sementara
-        navMenu.style.transform = 'translateY(-150%)';
-        setTimeout(() => {
-            navMenu.style.transform = 'translateY(0)';
-        }, 800); // muncul lagi setelah scroll selesai
+        // hilangkan transform saat klik, scroll akan mengatur sendiri
+        // navMenu.style.transform tidak perlu di sini
     }
 }
 
-// efek hide saat scroll naik/turun
+// efek hide-on-scroll
 window.addEventListener('scroll', function() {
     let st = window.pageYOffset || document.documentElement.scrollTop;
+
     if (st > lastScrollTop) {
-        // scroll ke bawah → sembunyikan nav
+        // scroll ke bawah → sembunyikan navbar
         navMenu.style.transform = 'translateY(-150%)';
     } else {
-        // scroll ke atas → tampilkan nav
+        // scroll ke atas → tampilkan navbar
         navMenu.style.transform = 'translateY(0)';
     }
+
     lastScrollTop = st <= 0 ? 0 : st;
 });
 </script>
+
         
         <div class="section" id="poster">
     <h2>Poster tema TIK</h2>
