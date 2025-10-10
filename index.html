@@ -533,6 +533,87 @@
             .section { page-break-inside: avoid; }
             .controls { display: none; }
         }
+
+        /* Navigation Menu */
+.nav-menu {
+    position: sticky;
+    top: 20px;
+    z-index: 1000;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(51, 65, 85, 0.9));
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: transform 0.4s ease; /* tambahkan ini untuk animasi smooth */
+}
+
+.nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+}
+
+.nav-button {
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+    text-align: center;
+}
+
+.nav-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.nav-button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.nav-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.6);
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.nav-button:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+.nav-button span {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.nav-icon {
+    font-size: 1.2em;
+}
+
     </style>
 </head>
 <body>
@@ -542,19 +623,65 @@
             <p class="subtitle">Analisis Mendalam Peluang Karir di Sektor Teknologi Informasi dan Komunikasi Indonesia</p>
         </header>
 
-        <div class="section">
-            <h2>Poster tema tik</h2>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-images">
-                        <img src="img/posterfiks.jpg" alt="Poster 1">
-                        <img src="img/posterdua.jpg" alt="Poster 2">
-                    </div>
-                </div>
+<nav class="nav-menu" id="navMenu">
+    <div class="nav-grid">
+        <button class="nav-button" onclick="scrollToSection('poster')">Poster TIK</button>
+        <button class="nav-button" onclick="scrollToSection('statistik')">Ringkasan Statistik Utama</button>
+        <button class="nav-button" onclick="scrollToSection('tren')">Total Kebutuhan Tenaga Kerja</button>
+        <button class="nav-button" onclick="scrollToSection('top10')">Posisi Kebutuhan Tenaga Kerja Tertinggi</button>
+        <button class="nav-button" onclick="scrollToSection('pertumbuhan')">Pertumbuhan Tertinggi</button>
+        <button class="nav-button" onclick="scrollToSection('analisis')">Analisis Per Posisi</button>
+        <button class="nav-button" onclick="scrollToSection('prospek')">Prospek Kerja Bidang</button>
+        <button class="nav-button" onclick="scrollToSection('data')">Data Resmi 2022-2025</button>
+        <button class="nav-button" onclick="scrollToSection('kesimpulan')">Kesimpulan</button>
+        <button class="nav-button" onclick="scrollToSection('sumberdata')">Sumber Data</button>
+    </div>
+</nav>
+
+<script>
+const navMenu = document.getElementById('navMenu');
+let lastScrollTop = 0;
+
+function scrollToSection(id) {
+    const section = document.getElementById(id);
+    if (section) {
+        // scroll ke section
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // sembunyikan nav sementara
+        navMenu.style.transform = 'translateY(-150%)';
+        setTimeout(() => {
+            navMenu.style.transform = 'translateY(0)';
+        }, 800); // muncul lagi setelah scroll selesai
+    }
+}
+
+// efek hide saat scroll naik/turun
+window.addEventListener('scroll', function() {
+    let st = window.pageYOffset || document.documentElement.scrollTop;
+    if (st > lastScrollTop) {
+        // scroll ke bawah → sembunyikan nav
+        navMenu.style.transform = 'translateY(-150%)';
+    } else {
+        // scroll ke atas → tampilkan nav
+        navMenu.style.transform = 'translateY(0)';
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
+});
+</script>
+        
+        <div class="section" id="poster">
+    <h2>Poster tema TIK</h2>
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-images">
+                <img src="img/posterfiks.jpg" alt="Poster 1">
+                <img src="img/posterdua.jpg" alt="Poster 2">
             </div>
         </div>
+    </div>
+</div>
 
-        <div class="section">
+        <div class="section" id="statistik">
             <h2>Ringkasan Statistik Utama</h2>
             <div class="stats-grid">
                 <div class="stat-card">
@@ -576,28 +703,28 @@
             </div>
         </div>
 
-        <div class="section">
+        <div class="section" id="tren">
             <h2>Total Kebutuhan Tenaga Kerja (2022-2025)</h2>
             <div class="chart-container">
                 <canvas id="totalTrendChart"></canvas>
             </div>
         </div>
 
-        <div class="section">
-            <h2>Top 10 Posisi dengan Kebutuhan Tertinggi</h2>
+        <div class="section" id="top10">
+            <h2>Posisi dengan Kebutuhan Tertinggi</h2>
             <div class="chart-container">
                 <canvas id="top10Chart"></canvas>
             </div>
         </div>
 
-        <div class="section">
+        <div class="section" id="pertumbuhan">
             <h2>Posisi dengan Pertumbuhan Tertinggi</h2>
             <div class="chart-container">
                 <canvas id="growthChart"></canvas>
             </div>
         </div>
 
-        <div class="section">
+        <div class="section" id="analisis">
             <h2>Analisis Per Posisi (2022-2025)</h2>
             <div class="controls">
                 <select id="jobSelector" onchange="updateJobDetail()">
@@ -640,7 +767,7 @@
             </div>
         </div>
         
-        <div class="section">
+        <div class="section" id="prospek">
             <h2>Prospek Kerja dan Deskripsi Bidang</h2>
             
             <div class="job-category">
@@ -812,7 +939,7 @@
             </div>
         </div>
 
-        <div class="section">
+        <div class="section" id="data">
             <h2>Data Lengkap Proyeksi Kebutuhan Tenaga Kerja</h2>
             <div class="table-wrapper">
                 <table>
@@ -832,7 +959,7 @@
             </div>
         </div>
 
-        <div class="section">
+        <div class="section" id="kesimpulan">
             <div class="highlight">
                 <h3 style="color: #fbbf24; margin-top: 0;">Kesimpulan & Rekomendasi</h3>
                 <p><strong>Pertumbuhan Pasar:</strong> Sektor TIK Indonesia menunjukkan pertumbuhan robust 60,6% dalam periode 2022-2025, mencerminkan akselerasi transformasi digital nasional yang didorong oleh investasi infrastruktur digital dan adopsi teknologi cloud.</p>
@@ -852,7 +979,7 @@
             </div>
         </div>
         
-        <section class="small-section">
+        <section class="small-section" id="sumberdata">
             <div class="stats-grid">
                 <div class="small-card">
                     <div class="stat-images">
