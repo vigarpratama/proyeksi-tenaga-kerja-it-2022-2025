@@ -640,34 +640,25 @@
 
 <script>
 const navMenu = document.getElementById('navMenu');
-let lastScrollTop = 0;
 
 function scrollToSection(id) {
     const section = document.getElementById(id);
-    if (section) {
-        // scroll ke section
+    if(section) {
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        // hilangkan transform saat klik, scroll akan mengatur sendiri
-        // navMenu.style.transform tidak perlu di sini
     }
 }
 
-// efek hide-on-scroll
+// Navbar hanya terlihat saat di halaman utama (scrollY = 0)
 window.addEventListener('scroll', function() {
-    let st = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (st > lastScrollTop) {
-        // scroll ke bawah → sembunyikan navbar
-        navMenu.style.transform = 'translateY(-150%)';
-    } else {
-        // scroll ke atas → tampilkan navbar
+    if(window.scrollY === 0){
+        navMenu.style.opacity = '1';
         navMenu.style.transform = 'translateY(0)';
+    } else {
+        navMenu.style.opacity = '0';
+        navMenu.style.transform = 'translateY(-150%)';
     }
-
-    lastScrollTop = st <= 0 ? 0 : st;
 });
 </script>
-
         
         <div class="section" id="poster">
     <h2>Poster tema TIK</h2>
