@@ -474,6 +474,9 @@
             footer { padding: 15px; margin-top: 20px; font-size: 0.75em !important; }
             .small-section .photo-item img.small { max-width: 120px !important; max-height: 120px !important; }
             .small-section .publisher { font-size: 0.75rem !important; }
+            .nav-menu { padding: 10px; top: 10px; }
+            .nav-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+            .nav-button { padding: 10px 12px; font-size: 0.75em; }
         }
 
         /* Mobile */
@@ -488,6 +491,7 @@
             h1 { font-size: clamp(1.2rem, 6vw, 1.8rem); }
             .controls { flex-direction: column; }
             button, select { width: 100%; max-width: 100%; }
+            .nav-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         /* Tablet Portrait */
@@ -497,6 +501,7 @@
             .job-prospects { grid-template-columns: 1fr; }
             .chart-container { height: 320px; }
             table { font-size: 0.75em; }
+            .nav-grid { grid-template-columns: repeat(3, 1fr); }
         }
 
         /* Tablet Landscape */
@@ -505,12 +510,14 @@
             .job-prospects { grid-template-columns: repeat(2, 1fr); }
             .chart-container { height: 380px; }
             table { font-size: 0.85em; }
+            .nav-grid { grid-template-columns: repeat(4, 1fr); }
         }
 
         /* Desktop */
         @media (min-width: 1025px) and (max-width: 1399px) {
             .stats-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
             .chart-container { height: 420px; }
+            .nav-grid { grid-template-columns: repeat(5, 1fr); }
         }
 
         /* Large screens */
